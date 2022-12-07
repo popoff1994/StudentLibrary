@@ -2,7 +2,7 @@
 
 namespace StudentLibrary
 {
-    public class Students
+    public class Student
     {
         public int StudentId { get; set; }
         [MinLength(2, ErrorMessage ="Name must be atleast two characters long")]
