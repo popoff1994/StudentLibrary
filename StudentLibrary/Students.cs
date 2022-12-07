@@ -11,7 +11,7 @@ namespace StudentLibrary
         public bool CheckedIn { get; set; }
         public int NFCId { get; set; }
 
-        public Students(int studentId, string name, int absenceMin, int nFCId, bool checkedIn)
+        public Student(int studentId, string name, int absenceMin, int nFCId, bool checkedIn)
         {
             StudentId = studentId;
             Name = name;
@@ -19,7 +19,7 @@ namespace StudentLibrary
             NFCId = nFCId;
             CheckedIn = checkedIn
         }
-        public Students()
+        public Student()
         {
 
         }
