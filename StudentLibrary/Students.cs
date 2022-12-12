@@ -1,22 +1,26 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace StudentLibrary
 {
     public class Student
     {
-        public int StudentId { get; set; }
+        [Key]
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+        [Required]
+        public int Id { get; set; }
         [MinLength(2, ErrorMessage ="Name must be atleast two characters long")]
         public string Name { get; set; }
         public int AbsenceMin { get; set; }
         public bool CheckedIn { get; set; }
-        public int NFCId { get; set; }
+        public long NFCId { get; set; }
 
-        public Student(string name, int absenceMin, int nFCId, bool checkedIn)
+        public Student(string name, int absenceMin, long nFCId, bool checkedIn)
         {
             Name = name;
             AbsenceMin = absenceMin;
             NFCId = nFCId;
-            CheckedIn = checkedIn
+            CheckedIn = checkedIn;
         }
         public Student()
         {
